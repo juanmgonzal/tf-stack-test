@@ -118,7 +118,7 @@ resource "aws_elb" "web" {
         lb_protocol       = "http"
     }
     
-    health_check = {
+    health_check {
         target              = "HTTP:80/"
         interval            = 30
         healthy_threshold   = 2
