@@ -117,4 +117,12 @@ resource "aws_elb" "web" {
         lb_port           = 80
         lb_protocol       = "http"
     }
+    
+    health_check = {
+        target              = "HTTP:80/"
+        interval            = 30
+        healthy_threshold   = 2
+        unhealthy_threshold = 2
+        timeout             = 5
+    }
 }
